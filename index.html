@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6366f1">
 <title>Ripple</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +27,7 @@ html,body{height:100%}
   --primary-600:#4f46e5;
   --primary-50:#eef2ff;
   --danger:#ef4444;
-  --danger-50:#fef2f2;
   --success:#10b981;
-  --success-50:#ecfdf5;
   --radius-sm:8px;
   --radius:12px;
   --radius-lg:16px;
@@ -137,8 +136,6 @@ img,svg{display:block;max-width:100%}
 .btn.outline{background:transparent;color:var(--primary);border:1px solid var(--border-strong);box-shadow:none}
 .btn.outline:hover{background:var(--primary-50);border-color:var(--primary)}
 .btn.sm{padding:8px 13px;font-size:13px}
-.btn.danger{background:var(--danger);box-shadow:0 6px 16px rgba(239,68,68,.22)}
-.btn.danger:hover{background:#dc2626}
 .note{min-height:20px;font-size:12.5px;margin-top:12px;color:var(--danger)}
 .note.success{color:var(--success)}
 .auth-foot{margin-top:18px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
@@ -147,11 +144,17 @@ img,svg{display:block;max-width:100%}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-weight:600;font-size:13px;margin-top:14px}
 .back-link:hover{color:var(--primary)}
 
-/* =============== APP SHELL =============== */
-.app{display:grid;grid-template-columns:290px 1fr;height:100dvh;overflow:hidden;background:var(--surface)}
+/* =============== APP SHELL (DESKTOP) =============== */
+.app{
+  display:grid;
+  grid-template-columns:290px 1fr;
+  height:100dvh;
+  overflow:hidden;
+  background:var(--surface);
+}
 @media(min-width:1440px){.app{max-width:1400px;margin:0 auto;box-shadow:0 0 0 1px var(--border)}}
 
-/* =============== SIDEBAR =============== */
+/* =============== SIDEBAR (DESKTOP) =============== */
 .sidebar{
   display:flex;flex-direction:column;
   background:var(--surface);
@@ -159,6 +162,7 @@ img,svg{display:block;max-width:100%}
   padding:18px 14px;
   gap:18px;
   min-height:0;
+  overflow-y:auto;
 }
 .sidebar .brand{padding:6px 8px;font-size:19px}
 .sidebar .brand-mark{width:32px;height:32px;border-radius:10px}
@@ -170,7 +174,7 @@ img,svg{display:block;max-width:100%}
 }
 .me b{font-size:14px;font-weight:600;display:block;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
 .me small{font-size:12px;color:var(--text-2);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
-.nav{display:flex;flex-direction:column;gap:2px;flex:1;min-height:0;overflow-y:auto}
+.nav{display:flex;flex-direction:column;gap:2px;flex:1;min-height:0;overflow-y:auto;margin:0}
 .nav-label{
   font-size:11px;font-weight:700;color:var(--text-3);
   letter-spacing:.08em;text-transform:uppercase;
@@ -205,10 +209,10 @@ img,svg{display:block;max-width:100%}
 .privacy small{display:block;color:#b45309;font-size:11.5px;margin-top:2px}
 
 /* =============== MAIN =============== */
-.main{position:relative;background:var(--bg);min-width:0}
+.main{position:relative;background:var(--bg);min-width:0;overflow:hidden}
 .view{position:absolute;inset:0;display:flex;flex-direction:column;min-height:0;animation:fade .2s ease}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-.scroll{flex:1;overflow-y:auto;min-height:0}
+.scroll{flex:1;overflow-y:auto;min-height:0;-webkit-overflow-scrolling:touch}
 .page{max-width:840px;margin:0 auto;padding:40px 32px 60px;width:100%}
 .page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
@@ -297,7 +301,8 @@ img,svg{display:block;max-width:100%}
 .chat-body{
   overflow-y:auto;min-height:0;
   padding:24px 28px 8px;
-  display:flex;flex-direction:column;gap:2px;
+  display:flex;flex-direction:column;
+  -webkit-overflow-scrolling:touch;
 }
 .chat-empty{
   margin:auto;text-align:center;color:var(--text-2);
@@ -435,37 +440,191 @@ img,svg{display:block;max-width:100%}
 }
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
 
-/* =============== RESPONSIVE =============== */
+/* ============================================================
+   MOBILE / TABLET (FIXED LAYOUT)
+   Sidebar becomes a top bar in normal grid flow — no fixed
+   positioning, no padding hacks. Views fill remaining space.
+   ============================================================ */
 @media(max-width:900px){
-  .app{grid-template-columns:1fr}
+  .app{
+    grid-template-columns:1fr;
+    grid-template-rows:auto 1fr;
+    height:100dvh;
+    overflow:hidden;
+    max-width:none;
+    box-shadow:none;
+  }
+
+  /* Top bar — real grid row, not fixed */
   .sidebar{
-    position:fixed;top:0;left:0;right:0;bottom:auto;z-index:10;
-    flex-direction:row;align-items:center;gap:8px;
-    padding:10px 12px;height:60px;
-    border-right:0;border-bottom:1px solid var(--border);
-    background:rgba(255,255,255,.9);
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:8px;
+    padding:10px 12px;
+    height:auto;
+    min-height:56px;
+    border-right:0;
+    border-bottom:1px solid var(--border);
+    background:rgba(255,255,255,.92);
     backdrop-filter:saturate(180%) blur(16px);
     -webkit-backdrop-filter:saturate(180%) blur(16px);
+    position:relative;
+    overflow:visible;
+    z-index:10;
+    padding-top:calc(10px + env(safe-area-inset-top));
   }
-  .sidebar .brand{font-size:17px;padding:0}
-  .sidebar .brand span:not(.brand-mark){display:none}
+  .sidebar .brand{
+    font-size:16.5px;
+    padding:4px 2px;
+    flex-shrink:0;
+  }
+  .sidebar .brand-mark{width:30px;height:30px;border-radius:9px}
+  .sidebar .brand-mark svg{width:16px;height:16px}
   .me{display:none}
-  .nav{flex-direction:row;flex:1;justify-content:flex-end;gap:2px;overflow:visible}
+
+  .nav{
+    flex-direction:row;
+    flex:1;
+    justify-content:flex-end;
+    align-items:center;
+    gap:2px;
+    margin:0;
+    overflow:visible;
+  }
   .nav-label{display:none}
-  .nav-item{padding:9px;justify-content:center}
+  .nav-item{
+    padding:9px;
+    justify-content:center;
+    align-items:center;
+    min-width:42px;
+    min-height:42px;
+    flex:0 0 auto;
+  }
+  .nav-item svg{width:21px;height:21px}
   .nav-item span{display:none}
-  .sidebar-foot{flex-direction:row;gap:6px}
+  .nav-item .badge{
+    position:absolute;
+    top:2px;
+    right:2px;
+    margin:0;
+    min-width:16px;
+    height:16px;
+    padding:0 4px;
+    font-size:9.5px;
+    border:2px solid #fff;
+    box-sizing:content-box;
+  }
+
+  .sidebar-foot{
+    flex-direction:row;
+    gap:4px;
+    margin:0;
+    flex-shrink:0;
+  }
   .privacy{display:none}
+  .sidebar-foot .nav-item{margin:0}
   .logout-text{display:none}
-  .main{padding-top:60px}
-  .page{padding:24px 18px 40px}
-  .page-head h2{font-size:22px}
-  .chat-header{padding:10px 14px}
-  .chat-body{padding:16px 14px 6px}
-  .msg-row .bubble{max-width:82%}
-  .msg-time{opacity:1}
-  .composer-wrap{padding:10px 12px 14px}
-  .auth-card{padding:28px 22px}
+
+  /* Main takes the rest of the grid — no padding hack */
+  .main{
+    padding:0;
+    position:relative;
+    min-height:0;
+    overflow:hidden;
+  }
+
+  /* Pages */
+  .page{padding:20px 16px 40px}
+  .page-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:20px;
+  }
+  .page-head h2{font-size:21px;line-height:1.2}
+  .page-head .btn{
+    align-self:flex-start;
+    padding:9px 14px;
+    font-size:13px;
+  }
+  .eyebrow{font-size:10.5px}
+
+  /* Cards */
+  .card{padding:12px 13px;gap:11px;border-radius:14px}
+  .avatar{width:40px;height:40px;border-radius:12px;font-size:13.5px}
+  .info b{font-size:14px}
+  .info small{font-size:12px}
+  .row-actions{gap:5px}
+  .btn.sm{padding:7px 11px;font-size:12.5px}
+  .status-pill{font-size:11.5px;padding:4px 9px}
+
+  /* Chat */
+  .chat-header{padding:10px 12px;gap:8px}
+  .chat-header .avatar.sm{width:36px;height:36px;border-radius:11px}
+  .chat-header .info b{font-size:14.5px}
+  .chat-header .info small{font-size:12px}
+  .back-btn{width:34px;height:34px;flex-shrink:0}
+  .chat-body{padding:16px 12px 6px}
+  .msg-row{margin-top:10px}
+  .msg-row .bubble{max-width:84%;padding:9px 13px;font-size:14px;border-radius:16px}
+  .msg-time{opacity:1;font-size:10.5px;padding:0 3px 2px}
+  .chat-empty .emoji{width:60px;height:60px;font-size:26px;border-radius:20px}
+  .chat-empty h3{font-size:16px}
+  .chat-empty p{font-size:13px}
+
+  /* Composer — safe area aware */
+  .composer-wrap{
+    padding:10px 12px calc(12px + env(safe-area-inset-bottom));
+  }
+  .composer{padding:5px;border-radius:15px}
+  .icon-btn{width:34px;height:34px}
+  .icon-btn svg{width:18px;height:18px}
+  .composer input[type=text]{font-size:15px;padding:7px 4px}
+  .send-btn{width:36px;height:36px;border-radius:11px}
+  .emoji-menu{
+    bottom:70px;
+    left:12px;
+    right:12px;
+    transform:none;
+    max-width:none;
+    justify-content:center;
+  }
+  .emoji-menu button{width:36px;height:36px;font-size:19px}
+
+  /* Auth */
+  .auth-shell{padding:16px;align-items:flex-start;padding-top:40px}
+  .auth-card{padding:26px 20px;border-radius:20px}
+  .auth-card h1{font-size:22px}
+  .auth-card .lede{font-size:13.5px}
+
+  /* Profile */
+  .profile-card{padding:20px 18px;border-radius:14px}
+  .profile-head{gap:14px;margin-bottom:18px}
+  .avatar.lg{width:64px;height:64px;border-radius:18px;font-size:20px}
+  .profile-head h3{font-size:16px}
+
+  /* Empty states */
+  .empty-state{padding:50px 20px}
+  .empty-state .empty-icon{width:56px;height:56px}
+  .empty-state .empty-icon svg{width:26px;height:26px}
+  .empty-state h3{font-size:16px}
+  .empty-state p{font-size:13px}
+}
+
+/* Very small phones */
+@media(max-width:380px){
+  .sidebar .brand span:not(.brand-mark){display:none}
+  .page{padding:16px 12px 32px}
+  .page-head h2{font-size:19px}
+  .nav-item{min-width:38px;padding:8px}
+}
+
+/* Landscape phones */
+@media(max-width:900px) and (orientation:landscape) and (max-height:520px){
+  .sidebar{min-height:48px;padding-top:calc(6px + env(safe-area-inset-top));padding-bottom:6px}
+  .nav-item{min-width:38px;min-height:38px;padding:6px}
+  .page{padding:14px 14px 30px}
 }
 </style>
 </head>
@@ -562,7 +721,7 @@ img,svg{display:block;max-width:100%}
       <span class="brand-mark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg>
       </span>
-      Ripple
+      <span>Ripple</span>
     </a>
 
     <div class="me">
@@ -786,14 +945,11 @@ async function api(url, options = {}) {
 function initials(name = "") {
   return (name.trim().split(/\s+/).map((p) => p[0]).join("").slice(0, 2) || "?").toUpperCase();
 }
-
 function escapeHtml(v = "") {
   return String(v).replace(/[&<>'"]/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#039;", '"': "&quot;"
   }[c]));
 }
-
-// Deterministic pastel gradient per user, for professional-looking avatars.
 function avatarStyle(seed = "") {
   let hash = 0;
   for (let i = 0; i < seed.length; i++) hash = seed.charCodeAt(i) + ((hash << 5) - hash);
@@ -804,16 +960,14 @@ function avatarStyle(seed = "") {
 function avatarHtml(name = "", extraClass = "") {
   return `<span class="avatar ${extraClass}" style="${avatarStyle(name)}">${initials(name)}</span>`;
 }
-
 function toast(message, error = false) {
-  let el = $("#toast");
+  const el = $("#toast");
   el.textContent = message;
   el.style.background = error ? "#b91c1c" : "#0f172a";
   el.hidden = false;
   clearTimeout(toast.timer);
   toast.timer = setTimeout(() => { el.hidden = true; }, 3200);
 }
-
 function timeShort(iso) {
   return new Intl.DateTimeFormat(undefined, { hour: "numeric", minute: "2-digit" }).format(new Date(iso));
 }
@@ -842,7 +996,7 @@ const state = {
 };
 
 /* =========================================================
-   VIEW SWITCHING
+   VIEWS
    ========================================================= */
 function showView(id) {
   ["view-auth", "view-forgot", "view-app"].forEach((v) => {
@@ -874,7 +1028,6 @@ function setAuthMode(mode) {
   $("#auth-password").autocomplete = isSignup ? "new-password" : "current-password";
   const n = $("#auth-note"); n.textContent = ""; n.classList.remove("success");
 }
-
 function initAuth() {
   setAuthMode("login");
   const params = new URLSearchParams(location.search);
@@ -884,9 +1037,7 @@ function initAuth() {
     n.textContent = "Password reset successfully. Please log in with your new password.";
     n.classList.add("success");
   }
-
   $$(".tabs button").forEach((t) => { t.onclick = () => setAuthMode(t.dataset.mode); });
-
   $("#auth-form").onsubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -895,7 +1046,6 @@ function initAuth() {
     const note = $("#auth-note");
     submit.disabled = true;
     note.textContent = ""; note.classList.remove("success");
-
     const payload = {
       email: $("#auth-email").value.trim(),
       password: $("#auth-password").value
@@ -920,7 +1070,7 @@ function initAuth() {
 }
 
 /* =========================================================
-   FORGOT PASSWORD
+   FORGOT
    ========================================================= */
 function initForgot() {
   $("#reset-form").onsubmit = async (e) => {
@@ -928,15 +1078,12 @@ function initForgot() {
     const note = $("#reset-note");
     const btn = $("#reset-submit");
     note.textContent = ""; note.classList.remove("success");
-
     const email = $("#reset-email").value.trim();
     const username = $("#reset-username").value.trim();
     const newPassword = $("#reset-new").value;
     const confirm = $("#reset-confirm").value;
-
     if (newPassword !== confirm) { note.textContent = "Passwords do not match."; return; }
     if (newPassword.length < 8) { note.textContent = "Password must be at least 8 characters."; return; }
-
     btn.disabled = true;
     try {
       const data = await api("/api/auth/reset-password", {
@@ -991,7 +1138,6 @@ async function initSidebar(activeScreen) {
     try { await api("/api/auth/logout", { method: "POST" }); } catch {}
     window.location.href = "/login";
   };
-
   return state.user;
 }
 
@@ -1003,7 +1149,6 @@ async function loadChats() {
   try {
     const { conversations } = await api("/api/conversations");
     state.conversations = conversations;
-
     if (!conversations.length) {
       container.innerHTML = `
         <div class="empty-state">
@@ -1016,7 +1161,6 @@ async function loadChats() {
         </div>`;
       return;
     }
-
     container.innerHTML = conversations.map((chat) => {
       const preview = chat.latest
         ? (chat.latest.text || (chat.latest.mediaType === "image" ? "📷 Photo"
@@ -1033,7 +1177,6 @@ async function loadChats() {
         <span class="meta">${ts}</span>
       </button>`;
     }).join("");
-
     container.querySelectorAll("[data-chat]").forEach((btn) => {
       btn.onclick = () => navigate(`/?chat=${btn.dataset.chat}`);
     });
@@ -1049,32 +1192,26 @@ function messageMarkup(m) {
   let body = "";
   if (m.text) body += `<p>${escapeHtml(m.text)}</p>`;
   if (m.mediaUrl) {
-    if (m.mediaType === "image")
-      body += `<img src="${m.mediaUrl}" alt="Shared image" loading="lazy">`;
-    else if (m.mediaType === "video")
-      body += `<video controls preload="metadata" src="${m.mediaUrl}"></video>`;
-    else
-      body += `<audio controls src="${m.mediaUrl}"></audio>`;
+    if (m.mediaType === "image") body += `<img src="${m.mediaUrl}" alt="Shared image" loading="lazy">`;
+    else if (m.mediaType === "video") body += `<video controls preload="metadata" src="${m.mediaUrl}"></video>`;
+    else body += `<audio controls src="${m.mediaUrl}"></audio>`;
   }
   return `<div class="msg-row ${m.mine ? "mine" : ""}">
     <div class="bubble">${body}</div>
     <span class="msg-time">${timeShort(m.createdAt)}</span>
   </div>`;
 }
-
 async function loadMessages(scroll = false) {
   if (!state.activeConversation || document.hidden) return;
   try {
     const data = await api(`/api/conversations/${state.activeConversation}/messages`);
     state.pollErrors = 0;
     const person = data.conversation.person;
-
     $("#chat-avatar").outerHTML = avatarHtml(person.name, "sm").replace(
       'class="avatar sm"', 'id="chat-avatar" class="avatar sm"'
     );
     $("#chat-name").textContent = person.name;
     $("#chat-handle").textContent = `@${person.username}`;
-
     const body = $("#chat-body");
     body.innerHTML = data.messages.length
       ? data.messages.map(messageMarkup).join("")
@@ -1083,7 +1220,6 @@ async function loadMessages(scroll = false) {
            <h3>You're connected</h3>
            <p>Start the conversation — send a message to ${escapeHtml(person.name)}.</p>
          </div>`;
-
     if (scroll) body.scrollTop = body.scrollHeight;
   } catch (err) {
     state.pollErrors++;
@@ -1095,16 +1231,13 @@ async function loadMessages(scroll = false) {
     }
   }
 }
-
 async function openChat(id) {
-  const changed = state.activeConversation !== id;
   state.activeConversation = id;
   state.pollErrors = 0;
   await loadMessages(true);
   clearInterval(state.messageTimer);
   state.messageTimer = setInterval(() => loadMessages(false), 3000);
 }
-
 function closeChat() {
   state.activeConversation = null;
   state.pollErrors = 0;
@@ -1123,7 +1256,6 @@ async function loadUsers() {
       api("/api/requests")
     ]);
     state.requests = reqData.requests || [];
-
     if (!userData.users.length) {
       container.innerHTML = `
         <div class="empty-state">
@@ -1135,7 +1267,6 @@ async function loadUsers() {
         </div>`;
       return;
     }
-
     container.innerHTML = userData.users.map((person) => {
       const req = state.requests.find((r) => r.person && r.person.id === person.id);
       let action;
@@ -1157,7 +1288,6 @@ async function loadUsers() {
         ${action}
       </article>`;
     }).join("");
-
     container.querySelectorAll("[data-request]").forEach((btn) => {
       btn.onclick = async () => {
         btn.disabled = true;
@@ -1190,7 +1320,6 @@ async function loadRequests() {
     const requests = data.requests || [];
     const incoming = requests.filter((r) => r.direction === "received" && r.status === "pending");
     const past = requests.filter((r) => !(r.direction === "received" && r.status === "pending"));
-
     const badge = $("#badge-requests");
     badge.hidden = incoming.length === 0;
     badge.textContent = incoming.length;
@@ -1317,14 +1446,11 @@ function initProfile() {
     const note = $("#pw-note");
     const btn = $("#pw-submit");
     note.textContent = ""; note.classList.remove("success");
-
     const cur = $("#pw-current").value;
     const next = $("#pw-new").value;
     const confirm = $("#pw-confirm").value;
-
     if (next !== confirm) { note.textContent = "New passwords do not match."; return; }
     if (next.length < 8) { note.textContent = "Password must be at least 8 characters."; return; }
-
     btn.disabled = true;
     try {
       const res = await api("/api/auth/change-password", {
@@ -1368,12 +1494,10 @@ function initComposer() {
       emojiMenu.hidden = true;
     }
   });
-
   $("#media-input").onchange = () => {
     const f = $("#media-input").files[0];
     $("#file-name").textContent = f ? f.name : "";
   };
-
   $("#composer").onsubmit = async (e) => {
     e.preventDefault();
     const text = $("#msg-input").value.trim();
@@ -1381,11 +1505,9 @@ function initComposer() {
     if (!text && !file) return;
     if (file && (!/^(image|video|audio)\//.test(file.type) || file.size > 25 * 1024 * 1024))
       return toast("Only image, video, or audio up to 25 MB.", true);
-
     const form = new FormData();
     form.append("text", text);
     if (file) form.append("media", file);
-
     const btn = e.target.querySelector("button[type=submit]");
     btn.disabled = true;
     try {
@@ -1454,14 +1576,11 @@ async function render() {
     await loadChats();
   }
 }
-
 function navigate(path) {
   history.pushState({}, "", path);
   render();
 }
-
 window.addEventListener("popstate", () => render());
-
 document.addEventListener("click", (e) => {
   const link = e.target.closest("a[data-link]");
   if (link && link.origin === location.origin) {

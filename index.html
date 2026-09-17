@@ -14,40 +14,19 @@
 *{margin:0;padding:0}
 html,body{height:100%}
 :root{
-  --bg:#f5f6fa;
-  --surface:#ffffff;
-  --surface-2:#f1f2f7;
-  --surface-3:#e8eaf0;
-  --border:#e7e9f0;
-  --border-strong:#d6d9e3;
-  --text:#0f172a;
-  --text-2:#64748b;
-  --text-3:#94a3b8;
-  --primary:#6366f1;
-  --primary-600:#4f46e5;
-  --primary-50:#eef2ff;
-  --danger:#ef4444;
-  --success:#10b981;
-  --radius-sm:8px;
-  --radius:12px;
-  --radius-lg:16px;
-  --radius-xl:24px;
+  --bg:#f5f6fa;--surface:#ffffff;--surface-2:#f1f2f7;--surface-3:#e8eaf0;
+  --border:#e7e9f0;--border-strong:#d6d9e3;
+  --text:#0f172a;--text-2:#64748b;--text-3:#94a3b8;
+  --primary:#6366f1;--primary-600:#4f46e5;--primary-50:#eef2ff;
+  --danger:#ef4444;--success:#10b981;
+  --radius:12px;--radius-lg:16px;--radius-xl:24px;
   --shadow-xs:0 1px 2px rgba(15,23,42,.04);
   --shadow-sm:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
-  --shadow:0 4px 16px rgba(15,23,42,.06);
   --shadow-lg:0 24px 64px rgba(15,23,42,.12);
   --font:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 [hidden]{display:none!important}
-body{
-  font-family:var(--font);
-  font-size:14.5px;
-  line-height:1.5;
-  color:var(--text);
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
+body{font-family:var(--font);font-size:14.5px;line-height:1.5;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 button,input,textarea{font:inherit;color:inherit}
 button{background:none;border:0;cursor:pointer;color:inherit}
 a{color:inherit;text-decoration:none}
@@ -55,78 +34,23 @@ img,svg{display:block;max-width:100%}
 ::selection{background:var(--primary-50);color:var(--primary-600)}
 
 /* =============== AUTH =============== */
-.auth-shell{
-  min-height:100dvh;
-  display:grid;
-  place-items:center;
-  padding:24px;
-  background:
-    radial-gradient(900px 600px at 8% 0%,#e0e7ff 0%,transparent 55%),
-    radial-gradient(900px 600px at 100% 100%,#fae8ff 0%,transparent 55%),
-    linear-gradient(180deg,#fafbff,#f5f6fa);
-}
-.auth-card{
-  width:100%;
-  max-width:440px;
-  background:var(--surface);
-  border-radius:var(--radius-xl);
-  padding:36px 32px;
-  box-shadow:var(--shadow-lg);
-  border:1px solid var(--border);
-  animation:cardIn .35s cubic-bezier(.2,.8,.2,1);
-}
+.auth-shell{min-height:100dvh;display:grid;place-items:center;padding:24px;background:radial-gradient(900px 600px at 8% 0%,#e0e7ff 0%,transparent 55%),radial-gradient(900px 600px at 100% 100%,#fae8ff 0%,transparent 55%),linear-gradient(180deg,#fafbff,#f5f6fa)}
+.auth-card{width:100%;max-width:440px;background:var(--surface);border-radius:var(--radius-xl);padding:36px 32px;box-shadow:var(--shadow-lg);border:1px solid var(--border);animation:cardIn .35s cubic-bezier(.2,.8,.2,1)}
 @keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em;font-size:22px}
-.brand-mark{
-  width:36px;height:36px;border-radius:11px;
-  background:linear-gradient(135deg,#818cf8,#6366f1);
-  display:grid;place-items:center;color:#fff;
-  box-shadow:0 6px 16px rgba(99,102,241,.35);
-}
+.brand-mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#818cf8,#6366f1);display:grid;place-items:center;color:#fff;box-shadow:0 6px 16px rgba(99,102,241,.35)}
 .brand-mark svg{width:20px;height:20px}
-.auth-card h1{
-  margin:22px 0 6px;
-  font-size:26px;font-weight:800;letter-spacing:-.035em;line-height:1.15;
-}
+.auth-card h1{margin:22px 0 6px;font-size:26px;font-weight:800;letter-spacing:-.035em;line-height:1.15}
 .auth-card .lede{color:var(--text-2);font-size:14px;margin-bottom:22px}
-.tabs{
-  display:flex;padding:4px;gap:4px;
-  background:var(--surface-2);
-  border-radius:var(--radius);
-  margin-bottom:22px;
-}
-.tabs button{
-  flex:1;padding:9px 12px;border-radius:9px;
-  font-size:13.5px;font-weight:600;color:var(--text-2);
-  transition:background .15s,color .15s,box-shadow .15s;
-}
-.tabs button.active{
-  background:var(--surface);color:var(--text);
-  box-shadow:var(--shadow-xs);
-}
+.tabs{display:flex;padding:4px;gap:4px;background:var(--surface-2);border-radius:var(--radius);margin-bottom:22px}
+.tabs button{flex:1;padding:9px 12px;border-radius:9px;font-size:13.5px;font-weight:600;color:var(--text-2);transition:background .15s,color .15s,box-shadow .15s}
+.tabs button.active{background:var(--surface);color:var(--text);box-shadow:var(--shadow-xs)}
 .field{display:block;margin-bottom:14px}
 .field-label{display:block;font-size:12.5px;font-weight:600;color:var(--text-2);margin-bottom:6px}
-.field input,.field textarea{
-  width:100%;padding:11px 13px;
-  background:var(--surface);
-  border:1px solid var(--border-strong);
-  border-radius:var(--radius);
-  outline:0;font-size:14px;
-  transition:border-color .15s,box-shadow .15s,background .15s;
-}
-.field input:focus,.field textarea:focus{
-  border-color:var(--primary);
-  box-shadow:0 0 0 4px rgba(99,102,241,.12);
-}
+.field input,.field textarea{width:100%;padding:11px 13px;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius);outline:0;font-size:14px;transition:border-color .15s,box-shadow .15s,background .15s}
+.field input:focus,.field textarea:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(99,102,241,.12)}
 .field small{display:block;margin-top:5px;color:var(--text-3);font-size:12px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:11px 18px;border-radius:var(--radius);
-  font-weight:600;font-size:14px;
-  background:var(--primary);color:#fff;
-  transition:background .15s,transform .06s,box-shadow .15s;
-  box-shadow:0 6px 16px rgba(99,102,241,.28);
-}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:var(--radius);font-weight:600;font-size:14px;background:var(--primary);color:#fff;transition:background .15s,transform .06s,box-shadow .15s;box-shadow:0 6px 16px rgba(99,102,241,.28)}
 .btn:hover{background:var(--primary-600)}
 .btn:active{transform:translateY(1px)}
 .btn:disabled{opacity:.6;cursor:not-allowed;box-shadow:none}
@@ -144,66 +68,27 @@ img,svg{display:block;max-width:100%}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-weight:600;font-size:13px;margin-top:14px}
 .back-link:hover{color:var(--primary)}
 
-/* =============== APP SHELL (DESKTOP) =============== */
-.app{
-  display:grid;
-  grid-template-columns:290px 1fr;
-  height:100dvh;
-  overflow:hidden;
-  background:var(--surface);
-}
+/* =============== APP SHELL =============== */
+.app{display:grid;grid-template-columns:290px 1fr;height:100dvh;overflow:hidden;background:var(--surface)}
 @media(min-width:1440px){.app{max-width:1400px;margin:0 auto;box-shadow:0 0 0 1px var(--border)}}
 
 /* =============== SIDEBAR (DESKTOP) =============== */
-.sidebar{
-  display:flex;flex-direction:column;
-  background:var(--surface);
-  border-right:1px solid var(--border);
-  padding:18px 14px;
-  gap:18px;
-  min-height:0;
-  overflow-y:auto;
-}
+.sidebar{display:flex;flex-direction:column;background:var(--surface);border-right:1px solid var(--border);padding:18px 14px;gap:18px;min-height:0;overflow-y:auto}
 .sidebar .brand{padding:6px 8px;font-size:19px}
 .sidebar .brand-mark{width:32px;height:32px;border-radius:10px}
 .sidebar .brand-mark svg{width:18px;height:18px}
-.me{
-  display:flex;align-items:center;gap:11px;
-  padding:10px;border-radius:var(--radius);
-  background:var(--surface-2);
-}
+.me{display:flex;align-items:center;gap:11px;padding:10px;border-radius:var(--radius);background:var(--surface-2)}
 .me b{font-size:14px;font-weight:600;display:block;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
 .me small{font-size:12px;color:var(--text-2);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
 .nav{display:flex;flex-direction:column;gap:2px;flex:1;min-height:0;overflow-y:auto;margin:0}
-.nav-label{
-  font-size:11px;font-weight:700;color:var(--text-3);
-  letter-spacing:.08em;text-transform:uppercase;
-  padding:8px 10px 6px;
-}
-.nav-item{
-  display:flex;align-items:center;gap:11px;
-  padding:10px 12px;border-radius:var(--radius);
-  color:var(--text-2);font-weight:500;font-size:14px;
-  transition:background .12s,color .12s;
-  position:relative;
-}
+.nav-label{font-size:11px;font-weight:700;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase;padding:8px 10px 6px}
+.nav-item{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:var(--radius);color:var(--text-2);font-weight:500;font-size:14px;transition:background .12s,color .12s;position:relative}
 .nav-item svg{width:19px;height:19px;flex-shrink:0}
 .nav-item:hover{background:var(--surface-2);color:var(--text)}
 .nav-item.active{background:var(--primary-50);color:var(--primary-600);font-weight:600}
-.nav-item .badge{
-  margin-left:auto;min-width:20px;height:20px;
-  padding:0 6px;border-radius:10px;
-  background:var(--primary);color:#fff;
-  font-size:11px;font-weight:700;
-  display:grid;place-items:center;
-}
+.nav-item .badge{margin-left:auto;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--primary);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
 .sidebar-foot{display:flex;flex-direction:column;gap:8px}
-.privacy{
-  display:flex;gap:10px;padding:11px 12px;
-  background:linear-gradient(135deg,#fff7ed,#ffedd5);
-  border-radius:var(--radius);
-  font-size:12px;color:#9a3412;
-}
+.privacy{display:flex;gap:10px;padding:11px 12px;background:linear-gradient(135deg,#fff7ed,#ffedd5);border-radius:var(--radius);font-size:12px;color:#9a3412}
 .privacy svg{width:16px;height:16px;flex-shrink:0;margin-top:1px}
 .privacy b{display:block;font-weight:700;font-size:12px}
 .privacy small{display:block;color:#b45309;font-size:11.5px;margin-top:2px}
@@ -219,63 +104,28 @@ img,svg{display:block;max-width:100%}
 .page-head h2{font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.15}
 .search-wrap{position:relative;margin-bottom:18px}
 .search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--text-3);pointer-events:none}
-.search{
-  width:100%;padding:12px 14px 12px 42px;
-  background:var(--surface);border:1px solid var(--border-strong);
-  border-radius:var(--radius);outline:0;font-size:14px;
-  transition:border-color .15s,box-shadow .15s;
-}
+.search{width:100%;padding:12px 14px 12px 42px;background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--radius);outline:0;font-size:14px;transition:border-color .15s,box-shadow .15s}
 .search:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(99,102,241,.12)}
 .hint{color:var(--text-2);font-size:13px;margin-bottom:18px}
 
 /* =============== CARDS =============== */
 .list{display:flex;flex-direction:column;gap:8px}
-.card{
-  display:flex;align-items:center;gap:13px;
-  padding:13px 15px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  transition:border-color .15s,box-shadow .15s,transform .06s;
-}
+.card{display:flex;align-items:center;gap:13px;padding:13px 15px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);transition:border-color .15s,box-shadow .15s,transform .06s}
 .card:hover{border-color:var(--border-strong);box-shadow:var(--shadow-sm)}
 .card.clickable{cursor:pointer}
 .card.clickable:active{transform:scale(.998)}
-.avatar{
-  width:42px;height:42px;flex-shrink:0;
-  border-radius:13px;
-  display:grid;place-items:center;
-  color:#fff;font-weight:700;font-size:14px;
-  letter-spacing:.02em;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-}
+.avatar{width:42px;height:42px;flex-shrink:0;border-radius:13px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;letter-spacing:.02em;box-shadow:0 4px 10px rgba(15,23,42,.08)}
 .avatar.lg{width:84px;height:84px;border-radius:22px;font-size:26px}
 .avatar.sm{width:36px;height:36px;border-radius:11px;font-size:12.5px}
-.avatar.xs{width:30px;height:30px;border-radius:9px;font-size:11px}
 .info{flex:1;min-width:0}
 .info b{display:block;font-size:14.5px;font-weight:600;line-height:1.25}
-.info small{
-  display:block;font-size:12.5px;color:var(--text-2);margin-top:3px;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
+.info small{display:block;font-size:12.5px;color:var(--text-2);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .meta{color:var(--text-3);font-size:12px;flex-shrink:0;margin-left:6px}
 .row-actions{display:flex;gap:6px;margin-left:auto;flex-shrink:0}
-.status-pill{
-  font-size:12px;color:var(--text-3);font-weight:600;
-  padding:5px 10px;border-radius:8px;background:var(--surface-2);
-  white-space:nowrap;
-}
+.status-pill{font-size:12px;color:var(--text-3);font-weight:600;padding:5px 10px;border-radius:8px;background:var(--surface-2);white-space:nowrap}
 .status-pill.connected{background:var(--primary-50);color:var(--primary-600)}
-.empty-state{
-  text-align:center;padding:70px 24px;
-  color:var(--text-2);
-}
-.empty-state .empty-icon{
-  width:64px;height:64px;margin:0 auto 16px;
-  display:grid;place-items:center;border-radius:20px;
-  background:linear-gradient(135deg,var(--primary-50),#f5e8ff);
-  color:var(--primary-600);
-}
+.empty-state{text-align:center;padding:70px 24px;color:var(--text-2)}
+.empty-state .empty-icon{width:64px;height:64px;margin:0 auto 16px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(135deg,var(--primary-50),#f5e8ff);color:var(--primary-600)}
 .empty-state .empty-icon svg{width:30px;height:30px}
 .empty-state h3{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px}
 .empty-state p{font-size:13.5px;color:var(--text-2);max-width:320px;margin:0 auto 18px}
@@ -283,274 +133,84 @@ img,svg{display:block;max-width:100%}
 
 /* =============== CHAT =============== */
 .chat{display:grid;grid-template-rows:auto 1fr auto;height:100%;min-height:0;background:var(--bg)}
-.chat-header{
-  display:flex;align-items:center;gap:12px;
-  padding:12px 20px;
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
-}
+.chat-header{display:flex;align-items:center;gap:12px;padding:12px 20px;background:var(--surface);border-bottom:1px solid var(--border)}
 .chat-header .info b{font-size:15px}
 .chat-header .info small{font-size:12.5px}
-.back-btn{
-  width:36px;height:36px;border-radius:10px;
-  display:grid;place-items:center;color:var(--text-2);
-  transition:background .12s,color .12s;
-}
+.back-btn{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--text-2);transition:background .12s,color .12s}
 .back-btn:hover{background:var(--surface-2);color:var(--text)}
 .back-btn svg{width:20px;height:20px}
-.chat-body{
-  overflow-y:auto;min-height:0;
-  padding:24px 28px 8px;
-  display:flex;flex-direction:column;
-  -webkit-overflow-scrolling:touch;
-}
-.chat-empty{
-  margin:auto;text-align:center;color:var(--text-2);
-  padding:40px 20px;
-}
-.chat-empty .emoji{
-  width:72px;height:72px;border-radius:24px;
-  background:linear-gradient(135deg,#eef2ff,#fae8ff);
-  display:grid;place-items:center;margin:0 auto 18px;
-  font-size:32px;
-}
+.chat-body{overflow-y:auto;min-height:0;padding:24px 28px 8px;display:flex;flex-direction:column;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.chat-empty{margin:auto;text-align:center;color:var(--text-2);padding:40px 20px}
+.chat-empty .emoji{width:72px;height:72px;border-radius:24px;background:linear-gradient(135deg,#eef2ff,#fae8ff);display:grid;place-items:center;margin:0 auto 18px;font-size:32px}
 .chat-empty h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px}
 .chat-empty p{font-size:13.5px;max-width:300px;margin:0 auto}
 .msg-row{display:flex;gap:8px;align-items:flex-end;margin-top:12px;animation:msgIn .22s cubic-bezier(.2,.8,.2,1)}
 @keyframes msgIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .msg-row.mine{flex-direction:row-reverse}
-.msg-row .bubble{
-  max-width:min(72%,560px);
-  padding:10px 14px;
-  border-radius:18px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  color:var(--text);
-  font-size:14.5px;
-  line-height:1.45;
-  word-break:break-word;
-  white-space:pre-wrap;
-  box-shadow:var(--shadow-xs);
-}
-.msg-row.mine .bubble{
-  background:linear-gradient(135deg,#6366f1,#7c3aed);
-  border-color:transparent;
-  color:#fff;
-  box-shadow:0 6px 18px rgba(99,102,241,.28);
-}
-.msg-row .bubble img,.msg-row .bubble video{
-  border-radius:12px;max-width:100%;display:block;
-  max-height:360px;
-}
+.msg-row .bubble{max-width:min(72%,560px);padding:10px 14px;border-radius:18px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:14.5px;line-height:1.45;word-break:break-word;white-space:pre-wrap;box-shadow:var(--shadow-xs)}
+.msg-row.mine .bubble{background:linear-gradient(135deg,#6366f1,#7c3aed);border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(99,102,241,.28)}
+.msg-row .bubble img,.msg-row .bubble video{border-radius:12px;max-width:100%;display:block;max-height:360px}
 .msg-row .bubble img{margin:-2px 0}
 .msg-row .bubble audio{display:block;max-width:260px;margin:4px 0}
 .msg-row .bubble p{margin:0}
-.msg-time{
-  font-size:11px;color:var(--text-3);
-  padding:0 6px 2px;flex-shrink:0;
-  opacity:0;transition:opacity .15s;
-}
+.msg-time{font-size:11px;color:var(--text-3);padding:0 6px 2px;flex-shrink:0;opacity:0;transition:opacity .15s}
 .msg-row:hover .msg-time{opacity:1}
 .msg-row.mine .msg-time{text-align:right}
 
 /* Composer */
-.composer-wrap{
-  padding:14px 24px 18px;
-  background:var(--surface);
-  border-top:1px solid var(--border);
-  position:relative;
-}
-.composer{
-  display:flex;align-items:center;gap:4px;
-  background:var(--surface);
-  border:1px solid var(--border-strong);
-  border-radius:16px;
-  padding:6px 6px 6px 8px;
-  transition:border-color .15s,box-shadow .15s;
-  max-width:960px;margin:0 auto;
-}
+.composer-wrap{padding:14px 24px 18px;background:var(--surface);border-top:1px solid var(--border);position:relative}
+.composer{display:flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--border-strong);border-radius:16px;padding:6px 6px 6px 8px;transition:border-color .15s,box-shadow .15s;max-width:960px;margin:0 auto}
 .composer:focus-within{border-color:var(--primary);box-shadow:0 0 0 4px rgba(99,102,241,.1)}
-.composer input[type=text]{
-  flex:1;min-width:0;border:0;outline:0;
-  padding:8px 4px;background:transparent;font-size:14.5px;
-}
-.icon-btn{
-  width:36px;height:36px;flex-shrink:0;
-  border-radius:10px;
-  display:grid;place-items:center;
-  color:var(--text-2);
-  transition:background .12s,color .12s;
-}
+.composer input[type=text]{flex:1;min-width:0;border:0;outline:0;padding:8px 4px;background:transparent;font-size:14.5px}
+.icon-btn{width:36px;height:36px;flex-shrink:0;border-radius:10px;display:grid;place-items:center;color:var(--text-2);transition:background .12s,color .12s}
 .icon-btn:hover{background:var(--surface-2);color:var(--text)}
 .icon-btn svg{width:19px;height:19px}
 .attachment{position:relative;overflow:hidden}
 .attachment input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer}
-.send-btn{
-  width:38px;height:38px;flex-shrink:0;
-  border-radius:11px;display:grid;place-items:center;
-  background:linear-gradient(135deg,#6366f1,#7c3aed);
-  color:#fff;
-  box-shadow:0 4px 12px rgba(99,102,241,.3);
-  transition:transform .06s,opacity .15s;
-}
+.send-btn{width:38px;height:38px;flex-shrink:0;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;box-shadow:0 4px 12px rgba(99,102,241,.3);transition:transform .06s,opacity .15s}
 .send-btn:hover{opacity:.92}
 .send-btn:active{transform:scale(.95)}
 .send-btn svg{width:18px;height:18px}
-.composer-wrap small{
-  display:block;margin:6px auto 0;max-width:960px;
-  color:var(--text-3);font-size:11.5px;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-}
-.emoji-menu{
-  position:absolute;bottom:78px;left:50%;transform:translateX(-50%);
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:14px;padding:8px;
-  box-shadow:var(--shadow-lg);
-  display:flex;flex-wrap:wrap;gap:2px;
-  max-width:min(340px,calc(100vw - 40px));
-  z-index:5;
-}
-.emoji-menu button{
-  width:38px;height:38px;border-radius:10px;
-  font-size:20px;display:grid;place-items:center;
-  transition:background .12s,transform .08s;
-}
+.composer-wrap small{display:block;margin:6px auto 0;max-width:960px;color:var(--text-3);font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.emoji-menu{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:8px;box-shadow:var(--shadow-lg);display:flex;flex-wrap:wrap;gap:2px;max-width:min(340px,calc(100vw - 40px));z-index:5}
+.emoji-menu button{width:38px;height:38px;border-radius:10px;font-size:20px;display:grid;place-items:center;transition:background .12s,transform .08s}
 .emoji-menu button:hover{background:var(--surface-2);transform:scale(1.1)}
 
 /* =============== PROFILE =============== */
-.profile-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius-lg);
-  padding:26px;margin-bottom:18px;
-}
+.profile-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;margin-bottom:18px}
 .profile-head{display:flex;align-items:center;gap:16px;margin-bottom:22px}
 .profile-head h3{font-size:18px;font-weight:700;letter-spacing:-.02em}
 .profile-head p{font-size:13px;color:var(--text-2);margin-top:2px}
 .field textarea{resize:vertical;min-height:80px;font-family:inherit}
 
 /* =============== TOAST =============== */
-.toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  background:#0f172a;color:#fff;
-  padding:11px 16px;border-radius:12px;
-  font-size:13.5px;font-weight:500;
-  box-shadow:var(--shadow-lg);
-  z-index:100;max-width:calc(100vw - 40px);
-  animation:toastIn .22s cubic-bezier(.2,.8,.2,1);
-}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:11px 16px;border-radius:12px;font-size:13.5px;font-weight:500;box-shadow:var(--shadow-lg);z-index:100;max-width:calc(100vw - 40px);animation:toastIn .22s cubic-bezier(.2,.8,.2,1)}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
 
-/* ============================================================
-   MOBILE / TABLET (FIXED LAYOUT)
-   Sidebar becomes a top bar in normal grid flow — no fixed
-   positioning, no padding hacks. Views fill remaining space.
-   ============================================================ */
+/* =============== MOBILE / TABLET =============== */
 @media(max-width:900px){
-  .app{
-    grid-template-columns:1fr;
-    grid-template-rows:auto 1fr;
-    height:100dvh;
-    overflow:hidden;
-    max-width:none;
-    box-shadow:none;
-  }
-
-  /* Top bar — real grid row, not fixed */
-  .sidebar{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    gap:8px;
-    padding:10px 12px;
-    height:auto;
-    min-height:56px;
-    border-right:0;
-    border-bottom:1px solid var(--border);
-    background:rgba(255,255,255,.92);
-    backdrop-filter:saturate(180%) blur(16px);
-    -webkit-backdrop-filter:saturate(180%) blur(16px);
-    position:relative;
-    overflow:visible;
-    z-index:10;
-    padding-top:calc(10px + env(safe-area-inset-top));
-  }
-  .sidebar .brand{
-    font-size:16.5px;
-    padding:4px 2px;
-    flex-shrink:0;
-  }
+  .app{grid-template-columns:1fr;grid-template-rows:auto 1fr;height:100dvh;overflow:hidden;max-width:none;box-shadow:none}
+  .sidebar{display:flex;flex-direction:row;align-items:center;gap:8px;padding:10px 12px;height:auto;min-height:56px;border-right:0;border-bottom:1px solid var(--border);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);position:relative;overflow:visible;z-index:10;padding-top:calc(10px + env(safe-area-inset-top))}
+  .sidebar .brand{font-size:16.5px;padding:4px 2px;flex-shrink:0}
   .sidebar .brand-mark{width:30px;height:30px;border-radius:9px}
   .sidebar .brand-mark svg{width:16px;height:16px}
   .me{display:none}
-
-  .nav{
-    flex-direction:row;
-    flex:1;
-    justify-content:flex-end;
-    align-items:center;
-    gap:2px;
-    margin:0;
-    overflow:visible;
-  }
+  .nav{flex-direction:row;flex:1;justify-content:flex-end;align-items:center;gap:2px;margin:0;overflow:visible}
   .nav-label{display:none}
-  .nav-item{
-    padding:9px;
-    justify-content:center;
-    align-items:center;
-    min-width:42px;
-    min-height:42px;
-    flex:0 0 auto;
-  }
+  .nav-item{padding:9px;justify-content:center;align-items:center;min-width:42px;min-height:42px;flex:0 0 auto}
   .nav-item svg{width:21px;height:21px}
   .nav-item span{display:none}
-  .nav-item .badge{
-    position:absolute;
-    top:2px;
-    right:2px;
-    margin:0;
-    min-width:16px;
-    height:16px;
-    padding:0 4px;
-    font-size:9.5px;
-    border:2px solid #fff;
-    box-sizing:content-box;
-  }
-
-  .sidebar-foot{
-    flex-direction:row;
-    gap:4px;
-    margin:0;
-    flex-shrink:0;
-  }
+  .nav-item .badge{position:absolute;top:2px;right:2px;margin:0;min-width:16px;height:16px;padding:0 4px;font-size:9.5px;border:2px solid #fff;box-sizing:content-box}
+  .sidebar-foot{flex-direction:row;gap:4px;margin:0;flex-shrink:0}
   .privacy{display:none}
   .sidebar-foot .nav-item{margin:0}
   .logout-text{display:none}
-
-  /* Main takes the rest of the grid — no padding hack */
-  .main{
-    padding:0;
-    position:relative;
-    min-height:0;
-    overflow:hidden;
-  }
-
-  /* Pages */
+  .main{padding:0;position:relative;min-height:0;overflow:hidden}
   .page{padding:20px 16px 40px}
-  .page-head{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:12px;
-    margin-bottom:20px;
-  }
+  .page-head{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:20px}
   .page-head h2{font-size:21px;line-height:1.2}
-  .page-head .btn{
-    align-self:flex-start;
-    padding:9px 14px;
-    font-size:13px;
-  }
+  .page-head .btn{align-self:flex-start;padding:9px 14px;font-size:13px}
   .eyebrow{font-size:10.5px}
-
-  /* Cards */
   .card{padding:12px 13px;gap:11px;border-radius:14px}
   .avatar{width:40px;height:40px;border-radius:12px;font-size:13.5px}
   .info b{font-size:14px}
@@ -558,8 +218,6 @@ img,svg{display:block;max-width:100%}
   .row-actions{gap:5px}
   .btn.sm{padding:7px 11px;font-size:12.5px}
   .status-pill{font-size:11.5px;padding:4px 9px}
-
-  /* Chat */
   .chat-header{padding:10px 12px;gap:8px}
   .chat-header .avatar.sm{width:36px;height:36px;border-radius:11px}
   .chat-header .info b{font-size:14.5px}
@@ -568,59 +226,39 @@ img,svg{display:block;max-width:100%}
   .chat-body{padding:16px 12px 6px}
   .msg-row{margin-top:10px}
   .msg-row .bubble{max-width:84%;padding:9px 13px;font-size:14px;border-radius:16px}
+  .msg-row .bubble video{max-height:60vh}
   .msg-time{opacity:1;font-size:10.5px;padding:0 3px 2px}
   .chat-empty .emoji{width:60px;height:60px;font-size:26px;border-radius:20px}
   .chat-empty h3{font-size:16px}
   .chat-empty p{font-size:13px}
-
-  /* Composer — safe area aware */
-  .composer-wrap{
-    padding:10px 12px calc(12px + env(safe-area-inset-bottom));
-  }
+  .composer-wrap{padding:10px 12px calc(12px + env(safe-area-inset-bottom))}
   .composer{padding:5px;border-radius:15px}
   .icon-btn{width:34px;height:34px}
   .icon-btn svg{width:18px;height:18px}
   .composer input[type=text]{font-size:15px;padding:7px 4px}
   .send-btn{width:36px;height:36px;border-radius:11px}
-  .emoji-menu{
-    bottom:70px;
-    left:12px;
-    right:12px;
-    transform:none;
-    max-width:none;
-    justify-content:center;
-  }
+  .emoji-menu{bottom:70px;left:12px;right:12px;transform:none;max-width:none;justify-content:center}
   .emoji-menu button{width:36px;height:36px;font-size:19px}
-
-  /* Auth */
   .auth-shell{padding:16px;align-items:flex-start;padding-top:40px}
   .auth-card{padding:26px 20px;border-radius:20px}
   .auth-card h1{font-size:22px}
   .auth-card .lede{font-size:13.5px}
-
-  /* Profile */
   .profile-card{padding:20px 18px;border-radius:14px}
   .profile-head{gap:14px;margin-bottom:18px}
   .avatar.lg{width:64px;height:64px;border-radius:18px;font-size:20px}
   .profile-head h3{font-size:16px}
-
-  /* Empty states */
   .empty-state{padding:50px 20px}
   .empty-state .empty-icon{width:56px;height:56px}
   .empty-state .empty-icon svg{width:26px;height:26px}
   .empty-state h3{font-size:16px}
   .empty-state p{font-size:13px}
 }
-
-/* Very small phones */
 @media(max-width:380px){
   .sidebar .brand span:not(.brand-mark){display:none}
   .page{padding:16px 12px 32px}
   .page-head h2{font-size:19px}
   .nav-item{min-width:38px;padding:8px}
 }
-
-/* Landscape phones */
 @media(max-width:900px) and (orientation:landscape) and (max-height:520px){
   .sidebar{min-height:48px;padding-top:calc(6px + env(safe-area-inset-top));padding-bottom:6px}
   .nav-item{min-width:38px;min-height:38px;padding:6px}
@@ -633,42 +271,19 @@ img,svg{display:block;max-width:100%}
 <!-- ================= AUTH ================= -->
 <section id="view-auth" class="auth-shell" hidden>
   <div class="auth-card">
-    <div class="brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg>
-      </span>
-      Ripple
-    </div>
+    <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg></span>Ripple</div>
     <h1 id="auth-title">Welcome back</h1>
     <p class="lede" id="auth-lede">Log in to continue your private conversations.</p>
-
     <div class="tabs">
       <button type="button" class="active" data-mode="login">Log in</button>
       <button type="button" data-mode="signup">Create account</button>
     </div>
-
     <form id="auth-form" data-mode="login" autocomplete="on">
-      <label class="field signup-only" hidden>
-        <span class="field-label">Display name</span>
-        <input id="auth-name" maxlength="60" placeholder="Your name" autocomplete="name">
-      </label>
-      <label class="field signup-only" hidden>
-        <span class="field-label">Username</span>
-        <input id="auth-username" maxlength="30" placeholder="e.g. alex_89" autocomplete="username">
-        <small>Lowercase letters, numbers, and underscores only.</small>
-      </label>
-      <label class="field">
-        <span class="field-label">Email</span>
-        <input id="auth-email" type="email" required autocomplete="email" placeholder="you@example.com">
-      </label>
-      <label class="field">
-        <span class="field-label">Password</span>
-        <input id="auth-password" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters">
-      </label>
-      <div class="login-only auth-foot">
-        <a href="/forgot-password" data-link class="link">Forgot password?</a>
-        <span></span>
-      </div>
+      <label class="field signup-only" hidden><span class="field-label">Display name</span><input id="auth-name" maxlength="60" placeholder="Your name" autocomplete="name"></label>
+      <label class="field signup-only" hidden><span class="field-label">Username</span><input id="auth-username" maxlength="30" placeholder="e.g. alex_89" autocomplete="username"><small>Lowercase letters, numbers, and underscores only.</small></label>
+      <label class="field"><span class="field-label">Email</span><input id="auth-email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="field"><span class="field-label">Password</span><input id="auth-password" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label>
+      <div class="login-only auth-foot"><a href="/forgot-password" data-link class="link">Forgot password?</a><span></span></div>
       <button id="auth-submit" class="btn block" type="submit">Log in</button>
     </form>
     <p id="auth-note" class="note" role="alert"></p>
@@ -678,38 +293,17 @@ img,svg{display:block;max-width:100%}
 <!-- ================= FORGOT ================= -->
 <section id="view-forgot" class="auth-shell" hidden>
   <div class="auth-card">
-    <div class="brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg>
-      </span>
-      Ripple
-    </div>
+    <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg></span>Ripple</div>
     <h1>Reset password</h1>
     <p class="lede">Enter your email and choose a new password.</p>
-
     <form id="reset-form">
-      <label class="field">
-        <span class="field-label">Registered email</span>
-        <input id="reset-email" type="email" required autocomplete="email" placeholder="you@example.com">
-      </label>
-      <label class="field">
-        <span class="field-label">Username <span style="color:var(--text-3);font-weight:400">(optional)</span></span>
-        <input id="reset-username" maxlength="30" placeholder="e.g. alex_89">
-      </label>
-      <label class="field">
-        <span class="field-label">New password</span>
-        <input id="reset-new" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
-      </label>
-      <label class="field">
-        <span class="field-label">Confirm new password</span>
-        <input id="reset-confirm" type="password" required minlength="8" autocomplete="new-password" placeholder="Re-enter new password">
-      </label>
+      <label class="field"><span class="field-label">Registered email</span><input id="reset-email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      <label class="field"><span class="field-label">Username <span style="color:var(--text-3);font-weight:400">(optional)</span></span><input id="reset-username" maxlength="30" placeholder="e.g. alex_89"></label>
+      <label class="field"><span class="field-label">New password</span><input id="reset-new" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters"></label>
+      <label class="field"><span class="field-label">Confirm new password</span><input id="reset-confirm" type="password" required minlength="8" autocomplete="new-password" placeholder="Re-enter new password"></label>
       <button id="reset-submit" class="btn block" type="submit">Reset password</button>
     </form>
-    <a href="/login" data-link class="back-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-      Back to log in
-    </a>
+    <a href="/login" data-link class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Back to log in</a>
     <p id="reset-note" class="note" role="alert"></p>
   </div>
 </section>
@@ -717,88 +311,36 @@ img,svg{display:block;max-width:100%}
 <!-- ================= APP ================= -->
 <div id="view-app" class="app" hidden>
   <aside class="sidebar">
-    <a href="/" data-link class="brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg>
-      </span>
-      <span>Ripple</span>
-    </a>
-
-    <div class="me">
-      <span id="me-avatar" class="avatar sm"></span>
-      <div style="min-width:0">
-        <b id="me-name"></b>
-        <small id="me-handle"></small>
-      </div>
-    </div>
-
+    <a href="/" data-link class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="m5 7 2 4"/><path d="m19 7-2 4"/><circle cx="12" cy="13" r="5"/></svg></span><span>Ripple</span></a>
+    <div class="me"><span id="me-avatar" class="avatar sm"></span><div style="min-width:0"><b id="me-name"></b><small id="me-handle"></small></div></div>
     <nav class="nav">
       <div class="nav-label">Menu</div>
-      <a href="/" data-link class="nav-item" data-screen="chats">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span>Messages</span>
-      </a>
-      <a href="/discover" data-link class="nav-item" data-screen="discover">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-        <span>Discover</span>
-      </a>
-      <a href="/requests" data-link class="nav-item" data-screen="requests">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <span>Requests</span>
-        <i id="badge-requests" class="badge" hidden></i>
-      </a>
-      <a href="/profile" data-link class="nav-item" data-screen="profile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Profile</span>
-      </a>
+      <a href="/" data-link class="nav-item" data-screen="chats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Messages</span></a>
+      <a href="/discover" data-link class="nav-item" data-screen="discover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Discover</span></a>
+      <a href="/requests" data-link class="nav-item" data-screen="requests"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Requests</span><i id="badge-requests" class="badge" hidden></i></a>
+      <a href="/profile" data-link class="nav-item" data-screen="profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>Profile</span></a>
     </nav>
-
     <div class="sidebar-foot">
-      <div class="privacy">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
-        <div>
-          <b>Private by design</b>
-          <small>One person at a time. No groups.</small>
-        </div>
-      </div>
-      <button id="btn-logout" class="nav-item" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-        <span class="logout-text">Log out</span>
-      </button>
+      <div class="privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg><div><b>Private by design</b><small>One person at a time. No groups.</small></div></div>
+      <button id="btn-logout" class="nav-item" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg><span class="logout-text">Log out</span></button>
     </div>
   </aside>
 
   <main class="main">
-    <!-- CHATS -->
     <section id="screen-chats" class="view" hidden>
-      <div class="scroll">
-        <div class="page">
-          <header class="page-head">
-            <div>
-              <p class="eyebrow">Messages</p>
-              <h2>Your conversations</h2>
-            </div>
-            <a href="/discover" data-link class="btn sm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Find someone
-            </a>
-          </header>
-          <div id="chat-list" class="list"></div>
-        </div>
-      </div>
+      <div class="scroll"><div class="page">
+        <header class="page-head"><div><p class="eyebrow">Messages</p><h2>Your conversations</h2></div>
+          <a href="/discover" data-link class="btn sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Find someone</a>
+        </header>
+        <div id="chat-list" class="list"></div>
+      </div></div>
     </section>
 
-    <!-- ACTIVE CHAT -->
     <section id="screen-chat" class="chat" hidden>
       <header class="chat-header">
-        <button id="btn-back" class="back-btn" type="button" aria-label="Back">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
+        <button id="btn-back" class="back-btn" type="button" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
         <span id="chat-avatar" class="avatar sm"></span>
-        <div class="info">
-          <b id="chat-name"></b>
-          <small id="chat-handle"></small>
-        </div>
+        <div class="info"><b id="chat-name"></b><small id="chat-handle"></small></div>
       </header>
       <div id="chat-body" class="chat-body"></div>
       <div class="composer-wrap">
@@ -809,113 +351,52 @@ img,svg{display:block;max-width:100%}
           <button type="button">🙏</button><button type="button">😢</button><button type="button">👀</button>
         </div>
         <form id="composer" class="composer">
-          <button id="emoji-toggle" class="icon-btn" type="button" title="Emoji">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-          </button>
-          <label class="icon-btn attachment" title="Attach file">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
-            <input id="media-input" type="file" accept="image/*,video/*,audio/*">
-          </label>
+          <button id="emoji-toggle" class="icon-btn" type="button" title="Emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></button>
+          <label class="icon-btn attachment" title="Attach file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><input id="media-input" type="file" accept="image/*,video/*,audio/*"></label>
           <input id="msg-input" type="text" maxlength="4000" autocomplete="off" placeholder="Write a message...">
-          <button class="send-btn" type="submit" title="Send">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-          </button>
+          <button class="send-btn" type="submit" title="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
         </form>
         <small id="file-name"></small>
       </div>
     </section>
 
-    <!-- DISCOVER -->
     <section id="screen-discover" class="view" hidden>
-      <div class="scroll">
-        <div class="page">
-          <header class="page-head">
-            <div>
-              <p class="eyebrow">Discover</p>
-              <h2>Find someone to chat with</h2>
-            </div>
-          </header>
-          <div class="search-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input id="search-input" class="search" type="search" placeholder="Search by name or @username">
-          </div>
-          <p class="hint">A person must accept your request before either of you can message.</p>
-          <div id="user-list" class="list"></div>
-        </div>
-      </div>
+      <div class="scroll"><div class="page">
+        <header class="page-head"><div><p class="eyebrow">Discover</p><h2>Find someone to chat with</h2></div></header>
+        <div class="search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input id="search-input" class="search" type="search" placeholder="Search by name or @username"></div>
+        <p class="hint">A person must accept your request before either of you can message.</p>
+        <div id="user-list" class="list"></div>
+      </div></div>
     </section>
 
-    <!-- REQUESTS -->
     <section id="screen-requests" class="view" hidden>
-      <div class="scroll">
-        <div class="page">
-          <header class="page-head">
-            <div>
-              <p class="eyebrow">Requests</p>
-              <h2>Decide who can message you</h2>
-            </div>
-          </header>
-          <div id="request-list" class="list"></div>
-        </div>
-      </div>
+      <div class="scroll"><div class="page">
+        <header class="page-head"><div><p class="eyebrow">Requests</p><h2>Decide who can message you</h2></div></header>
+        <div id="request-list" class="list"></div>
+      </div></div>
     </section>
 
-    <!-- PROFILE -->
     <section id="screen-profile" class="view" hidden>
-      <div class="scroll">
-        <div class="page" style="max-width:640px">
-          <header class="page-head">
-            <div>
-              <p class="eyebrow">Profile</p>
-              <h2>How people find you</h2>
-            </div>
-          </header>
-
-          <form id="profile-form" class="profile-card">
-            <div class="profile-head">
-              <div id="profile-avatar" class="avatar lg"></div>
-              <div>
-                <h3 id="profile-display"></h3>
-                <p id="profile-handle"></p>
-              </div>
-            </div>
-            <label class="field">
-              <span class="field-label">Display name</span>
-              <input id="profile-name" required maxlength="60">
-            </label>
-            <label class="field">
-              <span class="field-label">Username</span>
-              <input id="profile-username" required maxlength="30">
-              <small>People can search your username.</small>
-            </label>
-            <label class="field">
-              <span class="field-label">Bio</span>
-              <textarea id="profile-bio" maxlength="160" rows="3" placeholder="A little about you"></textarea>
-            </label>
-            <button class="btn" type="submit">Save profile</button>
-            <p id="profile-note" class="note"></p>
-          </form>
-
-          <form id="password-form" class="profile-card">
-            <h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Change password</h3>
-            <p style="font-size:13px;color:var(--text-2);margin-bottom:16px">Keep your account secure with a fresh password.</p>
-            <label class="field">
-              <span class="field-label">Current password</span>
-              <input id="pw-current" type="password" required autocomplete="current-password">
-            </label>
-            <label class="field">
-              <span class="field-label">New password</span>
-              <input id="pw-new" type="password" required minlength="8" autocomplete="new-password">
-            </label>
-            <label class="field">
-              <span class="field-label">Confirm new password</span>
-              <input id="pw-confirm" type="password" required minlength="8" autocomplete="new-password">
-            </label>
-            <button id="pw-submit" class="btn" type="submit">Update password</button>
-            <p id="pw-note" class="note"></p>
-          </form>
-        </div>
-      </div>
+      <div class="scroll"><div class="page" style="max-width:640px">
+        <header class="page-head"><div><p class="eyebrow">Profile</p><h2>How people find you</h2></div></header>
+        <form id="profile-form" class="profile-card">
+          <div class="profile-head"><div id="profile-avatar" class="avatar lg"></div><div><h3 id="profile-display"></h3><p id="profile-handle"></p></div></div>
+          <label class="field"><span class="field-label">Display name</span><input id="profile-name" required maxlength="60"></label>
+          <label class="field"><span class="field-label">Username</span><input id="profile-username" required maxlength="30"><small>People can search your username.</small></label>
+          <label class="field"><span class="field-label">Bio</span><textarea id="profile-bio" maxlength="160" rows="3" placeholder="A little about you"></textarea></label>
+          <button class="btn" type="submit">Save profile</button>
+          <p id="profile-note" class="note"></p>
+        </form>
+        <form id="password-form" class="profile-card">
+          <h3 style="font-size:16px;font-weight:700;margin-bottom:4px">Change password</h3>
+          <p style="font-size:13px;color:var(--text-2);margin-bottom:16px">Keep your account secure with a fresh password.</p>
+          <label class="field"><span class="field-label">Current password</span><input id="pw-current" type="password" required autocomplete="current-password"></label>
+          <label class="field"><span class="field-label">New password</span><input id="pw-new" type="password" required minlength="8" autocomplete="new-password"></label>
+          <label class="field"><span class="field-label">Confirm new password</span><input id="pw-confirm" type="password" required minlength="8" autocomplete="new-password"></label>
+          <button id="pw-submit" class="btn" type="submit">Update password</button>
+          <p id="pw-note" class="note"></p>
+        </form>
+      </div></div>
     </section>
   </main>
 </div>
@@ -941,7 +422,6 @@ async function api(url, options = {}) {
     throw err;
   }
 }
-
 function initials(name = "") {
   return (name.trim().split(/\s+/).map((p) => p[0]).join("").slice(0, 2) || "?").toUpperCase();
 }
@@ -992,7 +472,8 @@ const state = {
   requests: [],
   searchTimer: null,
   pollErrors: 0,
-  currentScreen: null
+  currentScreen: null,
+  renderedMessageIds: []   // Track rendered messages to avoid re-rendering
 };
 
 /* =========================================================
@@ -1021,9 +502,7 @@ function setAuthMode(mode) {
   $$(".signup-only").forEach((el) => { el.hidden = !isSignup; });
   $$(".login-only").forEach((el) => { el.hidden = isSignup; });
   $("#auth-title").textContent = isSignup ? "Create your account" : "Welcome back";
-  $("#auth-lede").textContent = isSignup
-    ? "Pick a name, handle, and password to get started."
-    : "Log in to continue your private conversations.";
+  $("#auth-lede").textContent = isSignup ? "Pick a name, handle, and password to get started." : "Log in to continue your private conversations.";
   $("#auth-submit").textContent = isSignup ? "Create account" : "Log in";
   $("#auth-password").autocomplete = isSignup ? "new-password" : "current-password";
   const n = $("#auth-note"); n.textContent = ""; n.classList.remove("success");
@@ -1115,17 +594,12 @@ async function initSidebar(activeScreen) {
     }
   }
   if (!state.user) { window.location.replace("/login"); return null; }
-
-  $("#me-avatar").outerHTML = avatarHtml(state.user.name, "sm").replace(
-    'class="avatar sm"', 'id="me-avatar" class="avatar sm"'
-  );
+  $("#me-avatar").outerHTML = avatarHtml(state.user.name, "sm").replace('class="avatar sm"', 'id="me-avatar" class="avatar sm"');
   $("#me-name").textContent = state.user.name;
   $("#me-handle").textContent = `@${state.user.username}`;
-
   $$(".nav-item[data-screen]").forEach((link) => {
     link.classList.toggle("active", link.dataset.screen === activeScreen);
   });
-
   try {
     const data = await api("/api/requests");
     const count = (data.requests || []).filter((r) => r.direction === "received" && r.status === "pending").length;
@@ -1133,7 +607,6 @@ async function initSidebar(activeScreen) {
     badge.hidden = count === 0;
     badge.textContent = count;
   } catch {}
-
   $("#btn-logout").onclick = async () => {
     try { await api("/api/auth/logout", { method: "POST" }); } catch {}
     window.location.href = "/login";
@@ -1152,9 +625,7 @@ async function loadChats() {
     if (!conversations.length) {
       container.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </div>
+          <div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
           <h3>No conversations yet</h3>
           <p>Find someone to chat with. They'll need to accept your request first.</p>
           <a href="/discover" data-link class="btn">Find someone</a>
@@ -1163,63 +634,115 @@ async function loadChats() {
     }
     container.innerHTML = conversations.map((chat) => {
       const preview = chat.latest
-        ? (chat.latest.text || (chat.latest.mediaType === "image" ? "📷 Photo"
-          : chat.latest.mediaType === "video" ? "🎬 Video"
-          : chat.latest.mediaType === "audio" ? "🎵 Audio" : ""))
+        ? (chat.latest.text || (chat.latest.mediaType === "image" ? "📷 Photo" : chat.latest.mediaType === "video" ? "🎬 Video" : chat.latest.mediaType === "audio" ? "🎵 Audio" : ""))
         : "Say hello 👋";
       const ts = chat.latest ? timeRelative(chat.latest.createdAt) : "";
       return `<button class="card clickable" data-chat="${chat.id}">
         ${avatarHtml(chat.person.name)}
-        <div class="info">
-          <b>${escapeHtml(chat.person.name)}</b>
-          <small>${escapeHtml(preview || "@" + chat.person.username)}</small>
-        </div>
+        <div class="info"><b>${escapeHtml(chat.person.name)}</b><small>${escapeHtml(preview || "@" + chat.person.username)}</small></div>
         <span class="meta">${ts}</span>
       </button>`;
     }).join("");
     container.querySelectorAll("[data-chat]").forEach((btn) => {
       btn.onclick = () => navigate(`/?chat=${btn.dataset.chat}`);
     });
-  } catch (err) {
-    toast(err.message, true);
-  }
+  } catch (err) { toast(err.message, true); }
 }
 
 /* =========================================================
-   ACTIVE CHAT
+   ACTIVE CHAT — Smart rendering (no full innerHTML replace)
    ========================================================= */
 function messageMarkup(m) {
   let body = "";
   if (m.text) body += `<p>${escapeHtml(m.text)}</p>`;
   if (m.mediaUrl) {
     if (m.mediaType === "image") body += `<img src="${m.mediaUrl}" alt="Shared image" loading="lazy">`;
-    else if (m.mediaType === "video") body += `<video controls preload="metadata" src="${m.mediaUrl}"></video>`;
-    else body += `<audio controls src="${m.mediaUrl}"></audio>`;
+    else if (m.mediaType === "video") body += `<video controls preload="metadata" playsinline src="${m.mediaUrl}"></video>`;
+    else body += `<audio controls preload="metadata" src="${m.mediaUrl}"></audio>`;
   }
-  return `<div class="msg-row ${m.mine ? "mine" : ""}">
+  return `<div class="msg-row ${m.mine ? "mine" : ""}" data-mid="${m.id}">
     <div class="bubble">${body}</div>
     <span class="msg-time">${timeShort(m.createdAt)}</span>
   </div>`;
 }
-async function loadMessages(scroll = false) {
+
+function emptyChatMarkup(personName) {
+  return `<div class="chat-empty" data-empty="1">
+    <div class="emoji">👋</div>
+    <h3>You're connected</h3>
+    <p>Start the conversation — send a message to ${escapeHtml(personName)}.</p>
+  </div>`;
+}
+
+async function loadMessages({ scroll = false, force = false } = {}) {
   if (!state.activeConversation || document.hidden) return;
   try {
     const data = await api(`/api/conversations/${state.activeConversation}/messages`);
     state.pollErrors = 0;
+
     const person = data.conversation.person;
-    $("#chat-avatar").outerHTML = avatarHtml(person.name, "sm").replace(
-      'class="avatar sm"', 'id="chat-avatar" class="avatar sm"'
-    );
-    $("#chat-name").textContent = person.name;
-    $("#chat-handle").textContent = `@${person.username}`;
+    // Update header only if changed
+    const headerName = $("#chat-name").textContent;
+    if (headerName !== person.name) {
+      $("#chat-avatar").outerHTML = avatarHtml(person.name, "sm").replace('class="avatar sm"', 'id="chat-avatar" class="avatar sm"');
+      $("#chat-name").textContent = person.name;
+      $("#chat-handle").textContent = `@${person.username}`;
+    }
+
     const body = $("#chat-body");
-    body.innerHTML = data.messages.length
-      ? data.messages.map(messageMarkup).join("")
-      : `<div class="chat-empty">
-           <div class="emoji">👋</div>
-           <h3>You're connected</h3>
-           <p>Start the conversation — send a message to ${escapeHtml(person.name)}.</p>
-         </div>`;
+    const messages = data.messages;
+    const newIds = messages.map((m) => m.id);
+    const currentIds = state.renderedMessageIds;
+
+    // Check if the message list is identical
+    const sameLength = newIds.length === currentIds.length;
+    const sameOrder = sameLength && newIds.every((id, i) => id === currentIds[i]);
+
+    if (sameOrder && !force) {
+      // Nothing changed — don't touch the DOM, keep video/audio playing
+      if (scroll) body.scrollTop = body.scrollHeight;
+      return;
+    }
+
+    // If nothing is rendered yet, or messages were removed, do a full render
+    if (!currentIds.length || messages.length === 0) {
+      if (messages.length === 0) {
+        body.innerHTML = emptyChatMarkup(person.name);
+      } else {
+        body.innerHTML = messages.map(messageMarkup).join("");
+      }
+      state.renderedMessageIds = newIds;
+      if (scroll) body.scrollTop = body.scrollHeight;
+      return;
+    }
+
+    // Detect if new messages are appended at the end (common case)
+    const prefixMatches = currentIds.every((id, i) => messages[i] && messages[i].id === id);
+
+    if (prefixMatches) {
+      // Append only new messages
+      const newMessages = messages.slice(currentIds.length);
+      if (newMessages.length) {
+        // Remove empty-state if present
+        const empty = body.querySelector("[data-empty]");
+        if (empty) empty.remove();
+
+        const nearBottom = body.scrollHeight - body.scrollTop - body.clientHeight < 120;
+        const fragment = document.createElement("div");
+        fragment.innerHTML = newMessages.map(messageMarkup).join("");
+        while (fragment.firstChild) body.appendChild(fragment.firstChild);
+
+        if (scroll || nearBottom) {
+          requestAnimationFrame(() => { body.scrollTop = body.scrollHeight; });
+        }
+      }
+      state.renderedMessageIds = newIds;
+      return;
+    }
+
+    // Fallback: order changed or messages deleted — full re-render
+    body.innerHTML = messages.length ? messages.map(messageMarkup).join("") : emptyChatMarkup(person.name);
+    state.renderedMessageIds = newIds;
     if (scroll) body.scrollTop = body.scrollHeight;
   } catch (err) {
     state.pollErrors++;
@@ -1231,16 +754,20 @@ async function loadMessages(scroll = false) {
     }
   }
 }
+
 async function openChat(id) {
   state.activeConversation = id;
   state.pollErrors = 0;
-  await loadMessages(true);
+  state.renderedMessageIds = [];
+  $("#chat-body").innerHTML = "";
+  await loadMessages({ scroll: true, force: true });
   clearInterval(state.messageTimer);
-  state.messageTimer = setInterval(() => loadMessages(false), 3000);
+  state.messageTimer = setInterval(() => loadMessages(), 3000);
 }
 function closeChat() {
   state.activeConversation = null;
   state.pollErrors = 0;
+  state.renderedMessageIds = [];
   clearInterval(state.messageTimer);
 }
 
@@ -1259,9 +786,7 @@ async function loadUsers() {
     if (!userData.users.length) {
       container.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </div>
+          <div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
           <h3>No people found</h3>
           <p>New accounts will show up here. Try a different search.</p>
         </div>`;
@@ -1281,10 +806,7 @@ async function loadUsers() {
       }
       return `<article class="card">
         ${avatarHtml(person.name)}
-        <div class="info">
-          <b>${escapeHtml(person.name)}</b>
-          <small>@${escapeHtml(person.username)} · ${escapeHtml(person.bio || "No bio yet")}</small>
-        </div>
+        <div class="info"><b>${escapeHtml(person.name)}</b><small>@${escapeHtml(person.username)} · ${escapeHtml(person.bio || "No bio yet")}</small></div>
         ${action}
       </article>`;
     }).join("");
@@ -1305,9 +827,7 @@ async function loadUsers() {
         }
       };
     });
-  } catch (err) {
-    toast(err.message, true);
-  }
+  } catch (err) { toast(err.message, true); }
 }
 
 /* =========================================================
@@ -1323,49 +843,36 @@ async function loadRequests() {
     const badge = $("#badge-requests");
     badge.hidden = incoming.length === 0;
     badge.textContent = incoming.length;
-
     if (!requests.length) {
       container.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
+          <div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
           <h3>No requests yet</h3>
           <p>When someone wants to chat, their request will show up here.</p>
           <a href="/discover" data-link class="btn">Find people</a>
         </div>`;
       return;
     }
-
     const renderCard = (r) => {
       const isIncoming = r.direction === "received" && r.status === "pending";
       const status = r.direction === "received"
         ? (r.status === "pending" ? "Wants to chat with you" : `You ${r.status}`)
         : (r.status === "accepted" ? "Connected" : r.status === "declined" ? "Declined" : "Sent");
-      let actions = "";
-      if (isIncoming) {
-        actions = `<div class="row-actions">
-          <button class="btn sm" data-respond="${r.id}" data-action="accepted">Accept</button>
-          <button class="btn ghost sm" data-respond="${r.id}" data-action="declined">Decline</button>
-        </div>`;
-      } else {
-        actions = `<span class="status-pill">${status}</span>`;
-      }
+      const actions = isIncoming
+        ? `<div class="row-actions">
+             <button class="btn sm" data-respond="${r.id}" data-action="accepted">Accept</button>
+             <button class="btn ghost sm" data-respond="${r.id}" data-action="declined">Decline</button>
+           </div>`
+        : `<span class="status-pill">${status}</span>`;
       return `<article class="card">
         ${avatarHtml(r.person.name)}
-        <div class="info">
-          <b>${escapeHtml(r.person.name)}</b>
-          <small>@${escapeHtml(r.person.username)} · ${status}</small>
-        </div>
+        <div class="info"><b>${escapeHtml(r.person.name)}</b><small>@${escapeHtml(r.person.username)} · ${status}</small></div>
         ${actions}
       </article>`;
     };
-
     container.innerHTML = incoming.length
-      ? incoming.map(renderCard).join("") +
-        (past.length ? `<p class="section-label">History</p>${past.map(renderCard).join("")}` : "")
+      ? incoming.map(renderCard).join("") + (past.length ? `<p class="section-label">History</p>${past.map(renderCard).join("")}` : "")
       : `<p class="section-label">History</p>${past.map(renderCard).join("")}`;
-
     container.querySelectorAll("[data-respond]").forEach((btn) => {
       btn.onclick = async () => {
         btn.disabled = true;
@@ -1388,9 +895,7 @@ async function loadRequests() {
         }
       };
     });
-  } catch (err) {
-    toast(err.message, true);
-  }
+  } catch (err) { toast(err.message, true); }
 }
 
 /* =========================================================
@@ -1398,15 +903,12 @@ async function loadRequests() {
    ========================================================= */
 function initProfile() {
   const user = state.user;
-  $("#profile-avatar").outerHTML = avatarHtml(user.name, "lg").replace(
-    'class="avatar lg"', 'id="profile-avatar" class="avatar lg"'
-  );
+  $("#profile-avatar").outerHTML = avatarHtml(user.name, "lg").replace('class="avatar lg"', 'id="profile-avatar" class="avatar lg"');
   $("#profile-display").textContent = user.name;
   $("#profile-handle").textContent = `@${user.username}`;
   $("#profile-name").value = user.name || "";
   $("#profile-username").value = user.username || "";
   $("#profile-bio").value = user.bio || "";
-
   $("#profile-form").onsubmit = async (e) => {
     e.preventDefault();
     const note = $("#profile-note");
@@ -1422,14 +924,10 @@ function initProfile() {
         })
       });
       state.user = updated.user;
-      $("#profile-avatar").outerHTML = avatarHtml(updated.user.name, "lg").replace(
-        'class="avatar lg"', 'id="profile-avatar" class="avatar lg"'
-      );
+      $("#profile-avatar").outerHTML = avatarHtml(updated.user.name, "lg").replace('class="avatar lg"', 'id="profile-avatar" class="avatar lg"');
       $("#profile-display").textContent = updated.user.name;
       $("#profile-handle").textContent = `@${updated.user.username}`;
-      $("#me-avatar").outerHTML = avatarHtml(updated.user.name, "sm").replace(
-        'class="avatar sm"', 'id="me-avatar" class="avatar sm"'
-      );
+      $("#me-avatar").outerHTML = avatarHtml(updated.user.name, "sm").replace('class="avatar sm"', 'id="me-avatar" class="avatar sm"');
       $("#me-name").textContent = updated.user.name;
       $("#me-handle").textContent = `@${updated.user.username}`;
       note.textContent = "Profile saved.";
@@ -1440,7 +938,6 @@ function initProfile() {
       note.classList.remove("success");
     }
   };
-
   $("#password-form").onsubmit = async (e) => {
     e.preventDefault();
     const note = $("#pw-note");
@@ -1518,7 +1015,7 @@ function initComposer() {
       $("#msg-input").value = "";
       $("#media-input").value = "";
       $("#file-name").textContent = "";
-      await loadMessages(true);
+      await loadMessages({ scroll: true, force: true });
     } catch (err) {
       toast(err.message, true);
     } finally {
@@ -1533,7 +1030,6 @@ function initComposer() {
 async function render() {
   const path = location.pathname.replace(/\/+$/, "") || "/";
   const params = new URLSearchParams(location.search);
-
   if (path === "/login" || path === "/login.html") { showView("view-auth"); initAuth(); return; }
   if (path === "/forgot-password" || path === "/forgot-password.html") { showView("view-forgot"); initForgot(); return; }
 
@@ -1608,7 +1104,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   $("#btn-back").onclick = () => navigate("/");
 
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && state.activeConversation) loadMessages(false);
+    if (!document.hidden && state.activeConversation) loadMessages();
   });
 
   await render();
